@@ -1,10 +1,9 @@
 import type { PageProps } from '$fresh/server.ts'
-import WebauthnCreate from '../islands/WebauthnCreate.tsx'
 
 export default function Home(_props: PageProps) {
 	return (
-		<div class='max-w-xl mx-auto px-4 py-4 flex flex-col'>
-			<WebauthnCreate />
+		<div class='px-4 py-4 max-w-prose mx-auto flex flex-col'>
+			<h1 class='text-2xl'>hello.</h1>
 		</div>
 	)
 }

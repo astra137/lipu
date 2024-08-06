@@ -4,24 +4,36 @@
 
 import * as $_404 from './routes/_404.tsx'
 import * as $_app from './routes/_app.tsx'
-import * as $api_joke from './routes/api/joke.ts'
-import * as $greet_name_ from './routes/greet/[name].tsx'
+import * as $_middleware from './routes/_middleware.ts'
+import * as $api_create from './routes/api/create.ts'
+import * as $api_get from './routes/api/get.ts'
+import * as $as_id_ from './routes/as/[id].tsx'
+import * as $at_id_ from './routes/at/[id].tsx'
+import * as $csrf from './routes/csrf.tsx'
 import * as $index from './routes/index.tsx'
-import * as $Counter from './islands/Counter.tsx'
+import * as $sudo from './routes/sudo.tsx'
+import * as $WebauthnCreate from './islands/WebauthnCreate.tsx'
+import * as $WebauthnGet from './islands/WebauthnGet.tsx'
 import { type Manifest } from '$fresh/server.ts'
 
 const manifest = {
-  routes: {
-    './routes/_404.tsx': $_404,
-    './routes/_app.tsx': $_app,
-    './routes/api/joke.ts': $api_joke,
-    './routes/greet/[name].tsx': $greet_name_,
-    './routes/index.tsx': $index,
-  },
-  islands: {
-    './islands/Counter.tsx': $Counter,
-  },
-  baseUrl: import.meta.url,
+	routes: {
+		'./routes/_404.tsx': $_404,
+		'./routes/_app.tsx': $_app,
+		'./routes/_middleware.ts': $_middleware,
+		'./routes/api/create.ts': $api_create,
+		'./routes/api/get.ts': $api_get,
+		'./routes/as/[id].tsx': $as_id_,
+		'./routes/at/[id].tsx': $at_id_,
+		'./routes/csrf.tsx': $csrf,
+		'./routes/index.tsx': $index,
+		'./routes/sudo.tsx': $sudo,
+	},
+	islands: {
+		'./islands/WebauthnCreate.tsx': $WebauthnCreate,
+		'./islands/WebauthnGet.tsx': $WebauthnGet,
+	},
+	baseUrl: import.meta.url,
 } satisfies Manifest
 
 export default manifest
